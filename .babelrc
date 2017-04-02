@@ -1,16 +1,33 @@
 {
   "presets": [
-    ["es2015", {"modules": false}],
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ie > 9"
+          ]
+        },
+        "modules": false
+      }
+    ],
     "stage-2",
     "react"
   ],
-  "plugins": ["transform-export-extensions"],
+  "plugins": [
+    "transform-export-extensions"
+  ],
   "env": {
     "development": {
-      "presets": ["react-hmre"]
+      "presets": [
+        "react-hmre"
+      ]
     },
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
     }
   }
 }

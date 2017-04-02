@@ -1,7 +1,7 @@
 import { combineReducers, applyMiddleware, createStore, compose } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+import thunk from 'redux-thunk';
 
-import { loadState, saveState } from './services/utils/localStorage';
+import { loadState, saveState } from 'services/utils/localStorage';
 import repos from 'services/repos/reducer';
 
 const persistedState = loadState();
@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
 const store = createStore(
   rootReducer,
   persistedState,
-  compose(applyMiddleware(createSagaMiddleware)),
+  compose(applyMiddleware(thunk)),
 );
 
 store.subscribe(() => {
