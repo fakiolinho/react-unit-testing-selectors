@@ -1,7 +1,7 @@
 {
-  "name": "react-quicky-starter-kit",
+  "name": "react-quick-starter-kit",
   "version": "1.0.0",
-  "description": "A simple StopWatch SPA built with ReactJS and Express",
+  "description": "React starter kit without having to remove more than 50% of code to get started",
   "main": "./dist/index.js",
   "author": {
     "name": "Fakiolas Marios",
@@ -22,6 +22,10 @@
     "stylelint": "stylelint -c .stylelintrc client/**/*.scss",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "travis": "npm run build && npm test && npm run coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fakiolinho/react-quick-starter-kit.git"
   },
   "keywords": [
     "react",
