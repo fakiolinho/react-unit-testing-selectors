@@ -1,7 +1,7 @@
 {
   "name": "react-quick-starter-kit",
   "version": "1.0.0",
-  "description": "React starter kit without having to remove more than 50% of code to build a prototype",
+  "description": "React starter kit without having to remove more than 50% of code to build a Single Page Application prototype",
   "main": "./dist/index.js",
   "author": {
     "name": "Fakiolas Marios",
