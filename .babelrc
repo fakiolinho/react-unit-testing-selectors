@@ -15,9 +15,6 @@
     "stage-2",
     "react"
   ],
-  "plugins": [
-    "transform-export-extensions"
-  ],
   "env": {
     "development": {
       "presets": [

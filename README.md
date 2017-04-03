@@ -2,13 +2,82 @@
 
 ![](https://travis-ci.org/fakiolinho/react-quick-starter-kit.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/fakiolinho/react-quick-starter-kit/badge.svg?branch=master)](https://coveralls.io/github/fakiolinho/react-quick-starter-kit?branch=master)
 
-React starter kit without having to remove more than 50% of code to get started
+React starter kit without having to remove more than 50% of code to build a prototype (Single Page Application).
+
+All React starter kits out there are really awesome but most of the times i found myself overengineering while trying to setup a solid working environment by removing all the unnecessary pieces and technologies. Sometimes it is better to keep bare minimum technologies in place so that you can build on top of them and scale faster. So this is why this is created.
 
 ## Installation
 
 ```bash
 git clone https://github.com/fakiolinho/react-quick-starter-kit.git
+cd react-quick-starter-kit
 npm i && npm start
 ```
 
 Check in your browser under `http://localhost:3000`
+
+## Technologies included
+
+### ReactJS
+
+[ReactJS](https://facebook.github.io/react/) since we cannot build a React starter kit without React itself right?
+
+### Redux
+
+[Redux](https://github.com/reactjs/redux) is used so we can create a global store and maintain our application's state with ease. Localstorage is used in order to preserve latest changes when browser gets refreshed.
+
+### Redux-thunk
+
+Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have action creators that return a function instead of an action so we can perform asynchronous dispatching. Redux-thunk under the hood uses Promises. If you need more power in your hands i highly recommend [redux-saga](https://github.com/redux-saga/redux-saga).
+
+### Express
+
+[Express](http://expressjs.com/) is used to provide a bare minimum nodejs server to serve our Single Page Application.
+
+### Jest
+
+[Jest](https://facebook.github.io/jest/) is our preferable testing tool to test a React project. You can also use [Mocha](https://mochajs.org/) but i prefer Jest because:
+
+- it plays nicely with React
+- it offers snapshot testing
+- it offers a robust assertion library out of the box so we don't need to add an extra dependency for that like chai etc
+- it offers mock utilities so there is no need to include tools like sinon to achieve this
+- it provides tests coverage statistics by default so i don't have to bind istanbul by myself
+
+### Enzyme
+
+[Enzyme](https://github.com/airbnb/enzyme) is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. With Enzyme unit testing ReactJS components is really easy.
+
+### CSS / SASS / POSTCSS
+
+All css code is written using scss syntax. Postcss is used through webpack under the hood in order to add some extra goodies like autoprefixing for cross-browser testing. If you are bored with css and want to use css moduls and more abstracted styling for your React components i highly propose [styled-components](https://styled-components.com/).
+
+### Webpack 2
+
+[Webpack](https://webpack.js.org/) is the ultimate module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. Here we use:
+
+- tree-shaking
+- hot module replacement
+- es6 transpiling to es5 with Babel (preset-2)
+- scss transformation to css
+- extra goodies like autoprefixing through postcss
+- separate setups for development and production environment so we can minify our bundle and run some quick measurements
+- bundle analyzer tool to investigate fast what's is going on under the hood
+
+### Babel
+
+[Babel](https://babeljs.io/) is a compiler for writing next generation JavaScript. We use stage-2 to include property initializer syntax, rest/spread operator for objects and many more.
+
+### ESLint
+
+[ESLint](http://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+
+### StyleLint
+
+[StyleLint](https://stylelint.io/) is a mighty, modern CSS linter that helps you enforce consistent conventions and avoid errors in your stylesheets.
+
+## License
+
+This project is licensed under the MIT License
+
+https://api.github.com/repos/facebook/react

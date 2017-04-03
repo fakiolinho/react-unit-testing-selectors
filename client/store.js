@@ -2,11 +2,11 @@ import { combineReducers, applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import { loadState, saveState } from 'services/utils/localStorage';
-import repos from 'services/repos/reducer';
+import repo from 'services/repo/reducer';
 
 const persistedState = loadState();
 const rootReducer = combineReducers({
-  repos,
+  repo,
 });
 const store = createStore(
   rootReducer,
@@ -16,7 +16,7 @@ const store = createStore(
 
 store.subscribe(() => {
   saveState({
-    repos: store.getState().repos,
+    repo: store.getState().repo,
   });
 });
 

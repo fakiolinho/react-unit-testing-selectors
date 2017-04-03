@@ -1,7 +1,7 @@
 {
   "name": "react-quick-starter-kit",
   "version": "1.0.0",
-  "description": "React starter kit without having to remove more than 50% of code to get started",
+  "description": "React starter kit without having to remove more than 50% of code to build a prototype",
   "main": "./dist/index.js",
   "author": {
     "name": "Fakiolas Marios",
@@ -9,17 +9,19 @@
     "url": "https://about.me/marios.fakiolas"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm run build:server && npm run build:client",
-    "build:server": "babel ./server -d ./dist",
-    "build:client": "webpack --config ./webpack/webpack.production.config.js --color --progress",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cross-env NODE_ENV=production babel ./server -d ./dist",
+    "build:client": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.production.config.js --color --progress",
     "predeploy": "npm run build",
     "deploy": "cross-env NODE_ENV=production node dist/index.js",
     "start": "cross-env NODE_ENV=development nodemon --debug server --ignore dist/ --exec babel-node",
     "test": "cross-env NODE_ENV=test jest",
-    "lint": "eslint client --color",
-    "lint:fix": "esw client --fix --watch --color",
+    "eslint": "eslint client --color",
+    "eslint:fix": "esw client --fix --watch --color",
     "clean": "npm prune && npm i",
     "stylelint": "stylelint -c .stylelintrc client/**/*.scss",
+    "preanalyze": "cross-env NODE_ENV=production webpack --config webpack/webpack.production.config.js --colors --profile --json > stats.json && mv stats.json ./dist",
+    "analyze": "webpack-bundle-analyzer ./dist/stats.json ./dist",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "travis": "npm run build && npm test && npm run coveralls"
   },
@@ -37,14 +39,14 @@
     "webpack",
     "babel"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^0.15.3",
     "bem-cn": "^2.1.3",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "express-history-api-fallback": "^2.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "normalize.css": "^6.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -60,7 +62,6 @@
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
-    "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.3.2",
     "babel-preset-react": "^6.23.0",
     "babel-preset-react-hmre": "^1.1.1",
@@ -82,10 +83,9 @@
     "html-webpack-plugin": "^2.28.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
-    "moxios": "^0.3.0",
+    "nock": "^9.0.11",
     "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
-    "optimize-css-assets-webpack-plugin": "^1.3.0",
     "postcss-loader": "^1.3.3",
     "react-addons-test-utils": "^15.4.2",
     "redux-mock-store": "^1.2.2",
@@ -98,8 +98,10 @@
     "stylelint-order": "^0.4.2",
     "stylelint-scss": "^1.4.3",
     "webpack": "^2.3.2",
+    "webpack-bundle-analyzer": "^2.3.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.17.1"
+    "webpack-hot-middleware": "^2.17.1",
+    "webpack-merge": "^4.1.0"
   },
   "jest": {
     "transform": {

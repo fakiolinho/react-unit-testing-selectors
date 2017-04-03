@@ -1,17 +1,14 @@
 const webpack = require('webpack');
-const cssnano = require('cssnano');
+const merge = require('webpack-merge');
+const autoprefixer = require('autoprefixer');
 
-module.exports = require('./webpack.base.config')({
+module.exports = merge(require('./webpack.base.config'), {
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?reload=true',
     './index.jsx',
   ],
   module: {
     rules: [{
-      test: /\.jsx?$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }, {
       test: /\.s?css$/,
       use: [
         'style-loader',
@@ -21,21 +18,8 @@ module.exports = require('./webpack.base.config')({
           options: {
             plugins() {
               return [
-                cssnano({
-                  autoprefixer: {
-                    add: true,
-                    remove: true,
-                    browsers: ['last 2 versions'],
-                  },
-                  discardComments: {
-                    removeAll: true,
-                  },
-                  discardDuplicates: true,
-                  discardUnused: false,
-                  mergeIdents: false,
-                  reduceIdents: false,
-                  safe: true,
-                  sourcemap: true,
+                autoprefixer({
+                  browsers: ['last 2 versions', 'ie > 9'],
                 }),
               ];
             },
@@ -43,12 +27,6 @@ module.exports = require('./webpack.base.config')({
         },
         'sass-loader',
       ],
-    }, {
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      use: 'file-loader',
-    }, {
-      test: /\.(eot|woff|woff2|svg|ttf)([?]?.*)$/,
-      use: 'file-loader',
     }],
   },
   plugins: [

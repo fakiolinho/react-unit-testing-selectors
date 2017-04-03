@@ -24,7 +24,7 @@
     "declaration-block-no-duplicate-properties": null,
     "no-empty-source": null,
     "rule-empty-line-before": ["always", {"severity": "error", "except": "first-nested"}],
-    "order/declaration-block-properties-alphabetical-order": true,
+    "order/properties-alphabetical-order": true,
     "scss/declaration-nested-properties": ["never", {"severity": "error"}]
   }
 }

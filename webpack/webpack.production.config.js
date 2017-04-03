@@ -1,16 +1,12 @@
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const cssnano = require('cssnano');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = require('./webpack.base.config')({
+module.exports = merge(require('./webpack.base.config'), {
   entry: './index.jsx',
   module: {
     rules: [{
-      test: /\.jsx?$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }, {
       test: /\.s?css$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
@@ -25,7 +21,7 @@ module.exports = require('./webpack.base.config')({
                     autoprefixer: {
                       add: true,
                       remove: true,
-                      browsers: ['last 2 versions'],
+                      browsers: ['last 2 versions', 'ie > 9'],
                     },
                     discardComments: {
                       removeAll: true,
@@ -44,12 +40,6 @@ module.exports = require('./webpack.base.config')({
           'sass-loader',
         ],
       }),
-    }, {
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      use: 'file-loader',
-    }, {
-      test: /\.(eot|woff|woff2|svg|ttf)([?]?.*)$/,
-      use: 'file-loader',
     }],
   },
   plugins: [
@@ -76,6 +66,5 @@ module.exports = require('./webpack.base.config')({
       filename: 'styles.css',
       allChunks: true,
     }),
-    new OptimizeCssAssetsPlugin(),
   ],
 });
