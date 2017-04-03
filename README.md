@@ -4,7 +4,7 @@
 
 React starter kit without having to remove more than 50% of code to build a Single Page Application prototype.
 
-All React starter kits out there are really awesome but most of the times i found myself overengineering while trying to setup a solid working environment by removing all the unnecessary pieces and technologies. Sometimes it is better to keep bare minimum technologies in place so that we can build on top of them and scale faster.
+All React starter kits out there are really awesome but most of the times i found myself overengineering while trying to setup a solid working environment by removing all the unnecessary pieces and technologies. Sometimes it is better to keep bare minimum technologies in place so that we can build on top of them, scale faster and retain maximum flexibility and freedom.
 
 ## Installation
 
