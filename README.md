@@ -4,7 +4,7 @@
 
 React starter kit without having to remove more than 50% of code to build a prototype (Single Page Application).
 
-All React starter kits out there are really awesome but most of the times i found myself overengineering while trying to setup a solid working environment by removing all the unnecessary pieces and technologies. Sometimes it is better to keep bare minimum technologies in place so that you can build on top of them and scale faster. So this is why this is created.
+All React starter kits out there are really awesome but most of the times i found myself overengineering while trying to setup a solid working environment by removing all the unnecessary pieces and technologies. Sometimes it is better to keep bare minimum technologies in place so that you can build on top of them and scale faster in the future.
 
 ## Installation
 
@@ -28,7 +28,7 @@ Check in your browser under `http://localhost:3000`
 
 ### Redux-thunk
 
-Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have action creators that return a function instead of an action so we can perform asynchronous dispatching. Redux-thunk under the hood uses Promises. If you need more power in your hands i highly recommend [redux-saga](https://github.com/redux-saga/redux-saga).
+Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have action creators that return a function instead of an action so we can perform asynchronous dispatching. Redux-thunk under the hood uses Promises. If you need more power in your hands i highly recommend [redux-saga](https://github.com/redux-saga/redux-saga) which uses generators.
 
 ### Express
 
@@ -50,7 +50,7 @@ Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have act
 
 ### CSS / SASS / POSTCSS
 
-All css code is written using scss syntax. Postcss is used through webpack under the hood in order to add some extra goodies like autoprefixing for cross-browser testing. If you are bored with css and want to use css moduls and more abstracted styling for your React components i highly propose [styled-components](https://styled-components.com/).
+All css code is written using scss syntax. Postcss is used through webpack under the hood in order to add some extra goodies like autoprefixing for cross-browser testing. If you are bored with css and want to use css modules and more abstracted styling for your React components i highly propose [styled-components](https://styled-components.com/).
 
 ### Webpack 2
 
@@ -79,5 +79,3 @@ All css code is written using scss syntax. Postcss is used through webpack under
 ## License
 
 This project is licensed under the MIT License
-
-https://api.github.com/repos/facebook/react
