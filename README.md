@@ -16,46 +16,6 @@ npm i && npm start
 
 Check in your browser under `http://localhost:3000`
 
-## Folders Structure
-
-Unfortunately folders structure across most of react starter kits is overlooked. Here is applied [proposed pattern](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1) by [Alexis Mangin](http://www.alexismangin.com/) which i have personally used in a quite big SPA and found out that it scales extremely well.
-
-Basic idea is that scenes are full-pages components while plain components are the essential bricks to build a scene or a more complicated component. So all components needed by a scene are placed inside a nested folder named `components`. That way we call them into action only for that very scene. Same with sub-components for bigger ones. We put them in a nested folder so we can have quick access. When we need to use a sub-component for more than 2 bigger components then we move this up to components tree structure. Let's see an example:
-
-```bash
---components
---scenes
-----PageA
-------index.jsx
-------index.spec.js
-------style.scss
-------components
---------ButtonGroup
-----------index.jsx
-----------index.spec.js
-----------style.scss
-----------components
-------------Button
---------------index.jsx
---------------index.spec.js
---------------style.scss
-----PageB
-------index.jsx
-------index.spec.js
-------style.scss
-```
-
-Here we have `PageA` scene that uses `ButtonGroup` component. This is placed in a nested folder. This uses also a small one named `Button` so we follow same pattern with nested components folder for it. Scene `PageB` doesn't use component `ButtonGroup`. If we want to make it globally available for more scenes then we move it to the sibling folder named `components` next to `scenes` one. That way more than 2 scenes can share same sub-components in our application.
-
-Also take notice that next to the scenes / components files a unit tests and a scss file are placed so we keep things in order as much as possible:
-
-```bash
---Button
-----index.jsx
-----index.spec.js
-----style.scss
-```
-
 
 ## Technologies Included
 
@@ -116,6 +76,72 @@ All css code is written using scss syntax. Postcss is used through webpack under
 ### StyleLint
 
 [StyleLint](https://stylelint.io/) is a mighty, modern CSS linter that helps you enforce consistent conventions and avoid errors in your stylesheets.
+
+## Folders Structure
+
+Unfortunately folders structure across most of react starter kits is overlooked. Here is applied [proposed pattern](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1) by [Alexis Mangin](http://www.alexismangin.com/) which i have personally used in a quite big SPA and found out that it scales extremely well.
+
+Basic idea is that scenes are full-pages components while plain components are the essential bricks to build a scene or a more complicated component. So all components needed by a scene are placed inside a nested folder named `components`. That way we call them into action only for that very scene. Same with sub-components for bigger ones. We put them in a nested folder so we can have quick access. When we need to use a sub-component for more than 2 bigger components then we move this up to components tree structure. Let's see an example:
+
+```bash
+--components
+--scenes
+----PageA
+------index.jsx
+------index.spec.js
+------style.scss
+------components
+--------ButtonGroup
+----------index.jsx
+----------index.spec.js
+----------style.scss
+----------components
+------------Button
+--------------index.jsx
+--------------index.spec.js
+--------------style.scss
+----PageB
+------index.jsx
+------index.spec.js
+------style.scss
+```
+
+Here we have `PageA` scene that uses `ButtonGroup` component. This is placed in a nested folder. This uses also a small one named `Button` so we follow same pattern with nested components folder for it. Scene `PageB` doesn't use component `ButtonGroup`. If we want to make it globally available for more scenes then we move it to the sibling folder named `components` next to `scenes` one. That way more than 2 scenes can share same sub-components in our application.
+
+Also take notice that next to the scenes / components files a unit tests and a scss file are placed so we keep things in order as much as possible:
+
+```bash
+--Button
+----index.jsx
+----index.spec.js
+----style.scss
+```
+
+## Useful Commands
+
+### npm run start
+
+Create a bundle in developement mode and launch a nodejs server under `http://localhost:3000`. Hot-module-replacement is enabled by default.
+
+### npm run build
+
+Create a production-ready bundle
+
+### npm run deploy
+
+This command forces `npm run build` and then a nodejs server is launched under `http://localhost:3000`
+
+### npm run eslint
+
+Check for js linting issues
+
+### npm run stylelint
+
+Check for scss linting issues
+
+### npm run analyze
+
+Analyze the final bundle in production mode
 
 ## License
 
