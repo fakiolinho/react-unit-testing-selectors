@@ -16,11 +16,6 @@
     "react"
   ],
   "env": {
-    "development": {
-      "presets": [
-        "react-hmre"
-      ]
-    },
     "test": {
       "plugins": [
         "transform-es2015-modules-commonjs"

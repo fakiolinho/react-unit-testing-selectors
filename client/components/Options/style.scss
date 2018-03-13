@@ -1,0 +1,29 @@
+ul {
+  margin-top: 50px;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+
+  & + li {
+    margin-left: 10px;
+  }
+}
+
+button {
+  background-color: white;
+  border-color: #DDDDDD;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #444444;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5;
+  min-width: 150px;
+  padding: 10px 20px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+}

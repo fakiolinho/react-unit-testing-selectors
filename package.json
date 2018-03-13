@@ -9,14 +9,12 @@
     "url": "https://about.me/marios.fakiolas"
   },
   "scripts": {
-    "build": "yarn run build:server && yarn run build:client",
-    "build:server": "cross-env NODE_ENV=production babel ./server -d ./dist",
-    "build:client": "cross-env NODE_ENV=production webpack --config ./webpack --color --progress",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack --color --progress",
     "predeploy": "yarn run build",
     "deploy": "cross-env NODE_ENV=production node dist/index.js",
     "precommit": "lint-staged",
     "prestart": "yarn",
-    "start": "cross-env NODE_ENV=development nodemon --inspect server --ignore client/ --exec babel-node",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack",
     "test": "cross-env NODE_ENV=test jest --config ./jest.config.json --no-cache",
     "eslint": "eslint client --color",
     "eslint:fix": "esw client --fix --watch --color",
@@ -56,18 +54,13 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bem-cn": "^2.1.3",
-    "body-parser": "^1.17.1",
-    "compression": "^1.6.2",
-    "express": "^4.16.3",
-    "express-history-api-fallback": "^2.2.1",
     "normalize.css": "^6.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0-beta.2",
-    "redux-thunk": "^2.2.0",
-    "tachyons": "^4.9.1"
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -122,6 +115,7 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-dev-middleware": "^2.0.0",
+    "webpack-dev-server": "^2.11.2",
     "webpack-hot-middleware": "^2.21.2",
     "webpack-merge": "^4.1.0"
   }

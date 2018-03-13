@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Card from 'components/Card';
+import Options from 'components/Options';
 
 import './style.scss';
 
 const App = () => (
   <div className="app">
-    <Card />
+    <Options />
   </div>
 );
 

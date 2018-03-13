@@ -1,3 +1,0 @@
-export const GET_REPO_REQUEST = 'GET_REPO_REQUEST';
-export const GET_REPO_SUCCESS = 'GET_REPO_SUCCESS';
-export const GET_REPO_ERROR = 'GET_REPO_ERROR';

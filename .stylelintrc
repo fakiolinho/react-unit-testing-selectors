@@ -10,7 +10,7 @@
     "color-hex-length": ["long", {"severity": "error"}],
     "number-leading-zero": ["never", {"severity": "error"}],
     "value-list-comma-space-after": "always",
-    "selector-no-id": [true, {"severity": "error"}],
+    "selector-max-id": 0,
     "declaration-block-semicolon-newline-after": ["always", {"severity": "error"}],
     "number-no-trailing-zeros": [true, {"severity": "error"}],
     "length-zero-no-unit": [true, {"severity": "error"}],
