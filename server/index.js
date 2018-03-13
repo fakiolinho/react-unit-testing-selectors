@@ -15,7 +15,7 @@ if (NODE_ENV === 'development') {
   const webpack = require('webpack');
   const webpackMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
-  const config = require('../webpack/webpack.development.config');
+  const config = require('../webpack');
   const compiler = webpack(config);
 
   app.use(webpackHotMiddleware(compiler));

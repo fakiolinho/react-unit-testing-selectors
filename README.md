@@ -19,11 +19,11 @@ Check in your browser under `http://localhost:3000`
 
 ## Technologies Included
 
-### ReactJS
+### ReactJS 16
 
 [ReactJS](https://facebook.github.io/react/) since we cannot build a React starter kit without React itself right?
 
-### Redux
+### Redux 4
 
 [Redux](https://github.com/reactjs/redux) is used so we can create a global store and maintain our application's state with ease. Localstorage is used in order to preserve latest changes when browser gets refreshed.
 
@@ -35,7 +35,7 @@ Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have act
 
 [Express](http://expressjs.com/) is used to provide a bare minimum nodejs server to serve our Single Page Application.
 
-### Jest
+### Jest 22
 
 [Jest](https://facebook.github.io/jest/) is our preferable testing tool to test a React project. You can also use [Mocha](https://mochajs.org/) but i prefer Jest because:
 
@@ -45,7 +45,7 @@ Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have act
 - it offers mock utilities so there is no need to include tools like sinon to achieve this
 - it provides tests coverage statistics by default so i don't have to bind istanbul by myself
 
-### Enzyme
+### Enzyme 3
 
 [Enzyme](https://github.com/airbnb/enzyme) is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. With Enzyme unit testing ReactJS components is really easy.
 
@@ -53,7 +53,7 @@ Because of [redux-thunk](https://github.com/gaearon/redux-thunk) we can have act
 
 All css code is written using scss syntax. Postcss is used through webpack under the hood in order to add some extra goodies like autoprefixing for cross-browser testing. If you are bored with css and want to use css modules and more abstracted styling for your React components i highly propose [styled-components](https://styled-components.com/).
 
-### Webpack 2
+### Webpack 3
 
 [Webpack](https://webpack.js.org/) is the ultimate module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. Here we use:
 

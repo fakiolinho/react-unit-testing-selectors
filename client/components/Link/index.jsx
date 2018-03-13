@@ -6,10 +6,15 @@ import './style.scss';
 
 const b = BEM('link');
 
-const Link = ({ children, className, href, ...restProps }) => (
+const Link = ({
+  children,
+  className,
+  href,
+  ...restProps
+}) => (
   <a
     href={href}
-    className={b.mix(className)}
+    className={b.mix(className).toString()}
     {...restProps}>
     {children}
   </a>

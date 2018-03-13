@@ -1,25 +1,27 @@
-import fetch from 'isomorphic-fetch';
+import 'babel-polyfill';
+import request from 'services/utils/request';
 
 import * as types from './actionTypes';
 
-const getRepo = (owner, repo) => dispatch => {
-  dispatch({
-    type: types.GET_REPO_REQUEST,
-  });
+const getRepo = (owner, repo) => (
+  async dispatch => {
+    try {
+      dispatch({
+        type: types.GET_REPO_REQUEST,
+      });
 
-  return fetch(`https://api.github.com/repos/${owner}/${repo}`)
-  .then(res => res.json())
-  .then(data => {
-    dispatch({
-      type: types.GET_REPO_SUCCESS,
-      payload: data,
-    });
-  })
-  .catch(() => {
-    dispatch({
-      type: types.GET_REPO_ERROR,
-    });
-  });
-};
+      const { data } = await request.get(`https://api.github.com/repos/${owner}/${repo}`);
+
+      dispatch({
+        type: types.GET_REPO_SUCCESS,
+        payload: data,
+      });
+    } catch (err) {
+      dispatch({
+        type: types.GET_REPO_ERROR,
+      });
+    }
+  }
+);
 
 export default getRepo;

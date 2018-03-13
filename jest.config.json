@@ -1,0 +1,19 @@
+{
+  "transform": {
+    ".*": "<rootDir>/node_modules/babel-jest"
+  },
+  "setupFiles": [
+    "<rootDir>/jest.setup.js"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|scss)$": "identity-obj-proxy"
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "client"
+  ],
+  "bail": true,
+  "verbose": true,
+  "testRegex": "\\.(test|spec)\\.(js|jsx)$",
+  "collectCoverage": true
+}
