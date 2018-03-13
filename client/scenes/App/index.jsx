@@ -1,16 +1,12 @@
 import React from 'react';
 
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Card from 'components/Card';
 
 import './style.scss';
 
 const App = () => (
   <div className="app">
-    <Header />
-    <Main />
-    <Footer />
+    <Card />
   </div>
 );
 

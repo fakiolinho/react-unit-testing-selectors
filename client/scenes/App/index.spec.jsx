@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Logo from './';
+import App from './';
 
-describe('test Logo component', () => {
+describe('test App component', () => {
   it('should render the component', () => {
-    const enzymeWrapper = shallow(<Logo />);
+    const enzymeWrapper = shallow(<App />);
 
     expect(enzymeWrapper).toHaveLength(1);
   });
