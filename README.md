@@ -11,7 +11,7 @@ All React starter kits out there are really awesome but most of the times i foun
 ```bash
 git clone https://github.com/fakiolinho/react-quick-starter-kit.git
 cd react-quick-starter-kit
-npm i && npm start
+yarn start
 ```
 
 Check in your browser under `http://localhost:3000`
